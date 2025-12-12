@@ -1,0 +1,102 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [9, 5, 11],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "F": "witchercraft:kaedweni_stone_foundation",
+    "=": "minecraft:packed_mud",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "minecraft:spruce_planks",
+    "H": "minecraft:hay_block",
+    "S": "minecraft:spruce_fence",
+    "L": "witchercraft:frostglass_lantern",
+    "C": "witchercraft:supply_crate_kaedwen",
+    "W": "minecraft:water_cauldron[level=1]",
+    "t": "minecraft:spruce_fence_gate[facing=south,in_wall=false,open=false]"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "FFFFFFFFF",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "FFFFFFFFF"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#BPPPPPB#",
+        "BPPPPPPPB",
+        "BPSHHHSPB",
+        "BPSSSSSPB",
+        "BPSWWSSPB",
+        "BPSHHHSPB",
+        "BPS##SSPB",
+        "BPC##CCPB",
+        "BPP##PPPB",
+        "BPPttPPPB",
+        "#BPPPPPB#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#B#####B#",
+        "BPPPPPPPB",
+        "BP#####PB",
+        "BP#####PB",
+        "BP##L##PB",
+        "BP#####PB",
+        "BP#####PB",
+        "BP#####PB",
+        "BP#####PB",
+        "BP#####PB",
+        "#B#####B#"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "###PPP###",
+        "##PPPPP##",
+        "#PPPPPPP#",
+        "#PPPPPPP#",
+        "#PPPPPPP#",
+        "#PPPPPPP#",
+        "#PPPPPPP#",
+        "#PPPPPPP#",
+        "#PPPPPPP#",
+        "##PPPPP##",
+        "###PPP###"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "###PPP###",
+        "###PPP###",
+        "##PPPPP##",
+        "##PPPPP##",
+        "#PPPPPPP#",
+        "#PPPPPPP#",
+        "#PPPPPPP#",
+        "##PPPPP##",
+        "###PPP###",
+        "###PPP###",
+        "###PPP###"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_stable_pen",
+  "notes": "Stable lane with hayloft roof, troughs, storage crates, and gated stalls for horses or goats."
+}

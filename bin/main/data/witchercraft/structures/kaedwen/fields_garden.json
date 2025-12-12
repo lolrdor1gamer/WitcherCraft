@@ -1,0 +1,68 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [11, 3, 11],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "D": "minecraft:coarse_dirt",
+    "F": "minecraft:farmland[moisture=7]",
+    "H": "witchercraft:herb_patch",
+    "W": "minecraft:water",
+    "P": "minecraft:spruce_planks",
+    "S": "minecraft:spruce_fence",
+    "L": "witchercraft:frostglass_lantern",
+    "C": "witchercraft:supply_crate_kaedwen"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "DDDDDDDDDDD",
+        "DFFFFFFFFFD",
+        "DFFFFFFFFFD",
+        "DFFFFFFFFFD",
+        "DFFFFFFFFFD",
+        "DFFFFFFFFFD",
+        "DFFFFFFFFFD",
+        "DFFFFFFFFFD",
+        "DFFFFFFFFFD",
+        "DFFFFFFFFFD",
+        "DDDDDDDDDDD"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#SSSSSSSSS#",
+        "SFHFHFHFHFS",
+        "SFFFFFFFFFS",
+        "SFHFHFHFHFS",
+        "SFFFFWFFFWS",
+        "SFHHHFHFHFS",
+        "SFFFFFFFFFS",
+        "SFHFHFHFHFS",
+        "SFFFFWFFFWS",
+        "SFHFHFHFHFS",
+        "#SSSSPSSS#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "###########",
+        "###L###L###",
+        "###########",
+        "###L###L###",
+        "###########",
+        "###L#C#L###",
+        "###########",
+        "###L###L###",
+        "###########",
+        "###L###L###",
+        "###########"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_fields_garden",
+  "notes": "Agricultural plot with alternating herb rows, irrigation channels, lantern posts, and a small crate staging area."
+}

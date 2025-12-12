@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "witchercraft:block/kaedweni_notice_board" },
+    "facing=south": { "model": "witchercraft:block/kaedweni_notice_board", "y": 180 },
+    "facing=west": { "model": "witchercraft:block/kaedweni_notice_board", "y": 270 },
+    "facing=east": { "model": "witchercraft:block/kaedweni_notice_board", "y": 90 }
+  }
+}

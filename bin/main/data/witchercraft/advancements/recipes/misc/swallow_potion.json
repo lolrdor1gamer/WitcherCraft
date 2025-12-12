@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "has_ingredients": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["minecraft:glass_bottle"] },
+          { "items": ["witchercraft:celandine"] },
+          { "items": ["witchercraft:drowner_brain"] }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "witchercraft:swallow_potion"
+      }
+    }
+  },
+  "requirements": [
+    ["has_ingredients", "has_the_recipe"]
+  ],
+  "rewards": {
+    "recipes": ["witchercraft:swallow_potion"]
+  }
+}

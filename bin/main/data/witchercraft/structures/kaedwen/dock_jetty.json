@@ -1,0 +1,92 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [9, 4, 13],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "W": "minecraft:water",
+    "P": "minecraft:spruce_planks",
+    "S": "minecraft:spruce_slab",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "L": "witchercraft:frostglass_lantern",
+  "C": "witchercraft:supply_crate_kaedwen",
+  "R": "minecraft:barrel[facing=south]",
+    "N": "witchercraft:netted_float"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW",
+        "WWWWWWWWW"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "PPPSSSPPP",
+        "PPPSSSPPP",
+        "PPPSSSPPP",
+        "BBBPPPBBB",
+        "PPPSSSPPP",
+        "PPPCCCPPP",
+        "PPPSSSPPP",
+        "PPPSSSPPP",
+        "PPPSSSPPP",
+        "PPPSSSPPP",
+        "PPPSSSPPP",
+        "PPPSSSPPP",
+        "PPPSSSPPP"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "####L####",
+        "###L#L###",
+        "##L###L##",
+        "#L#####L#",
+        "##L###L##",
+        "#L##C##L#",
+        "##L###L##",
+        "###L#L###",
+        "####L####",
+        "###L#L###",
+        "##L###L##",
+        "###L#L###",
+        "####L####"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "#########",
+        "#########",
+        "###N#N###",
+        "##N###N##",
+        "#N#####N#",
+        "##N#C#N##",
+        "#N##R##N#",
+        "##N###N##",
+        "###N#N###",
+        "#########",
+        "#########",
+        "#########",
+        "#########"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_dock_jetty",
+  "notes": "Spruce pier with beam supports, lantern pylons, crate stack, and fishing gear/float props atop shallow water."
+}

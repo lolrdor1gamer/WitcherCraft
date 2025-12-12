@@ -1,0 +1,26 @@
+{
+  "criteria": {
+    "has_ingredients": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["minecraft:glass_bottle"] },
+          { "items": ["witchercraft:celandine"] },
+          { "items": ["minecraft:glow_ink_sac"] }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "witchercraft:cat_potion"
+      }
+    }
+  },
+  "requirements": [
+    ["has_ingredients", "has_the_recipe"]
+  ],
+  "rewards": {
+    "recipes": ["witchercraft:cat_potion"]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [9, 5, 9],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "D": "minecraft:coarse_dirt",
+    "G": "minecraft:cobblestone",
+    "=": "minecraft:spruce_planks",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "witchercraft:kaedweni_plaster_wall",
+    "H": "witchercraft:herbal_drying_rack",
+    "C": "minecraft:crafting_table",
+    "K": "minecraft:campfire",
+    "t": "minecraft:spruce_door[facing=south,half=lower,hinge=left,open=false]",
+    "T": "minecraft:spruce_door[facing=south,half=upper,hinge=left,open=false]",
+    "W": "minecraft:glass_pane",
+    "S": "witchercraft:kaedweni_roof_shingle_slab"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "DDDGDDDDD",
+        "B=======B",
+        "=========",
+        "==C=H====",
+        "===H=====",
+        "===C=====",
+        "====K====",
+        "B=======B",
+        "DDDDDDDDD"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#########",
+        "BPPtPPPPB",
+        "BPPPPPPPB",
+        "BPPWPPPPB",
+        "BPHHPPPPB",
+        "BPPWPPPPB",
+        "BPPPPKPPB",
+        "BPPPPPPPB",
+        "#########"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#########",
+        "BPPTPPPPB",
+        "BPPPPPPPB",
+        "BPPWPPPPB",
+        "BP##PPPPB",
+        "BPPWPPPPB",
+        "BPPPPKPPB",
+        "BPPPPPPPB",
+        "#########"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "#########",
+        "SSSSSSSSS",
+        "SSSSSSSSS",
+        "SSSSSSSSS",
+        "SSSSSSSSS",
+        "SSSSSSSSS",
+        "SSSSSSSSS",
+        "SSSSSSSSS",
+        "#########"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "#########",
+        "###SSS###",
+        "###SSS###",
+        "###SSS###",
+        "###SSS###",
+        "###SSS###",
+        "###SSS###",
+        "###SSS###",
+        "#########"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_herbalist_hut",
+  "notes": "Compact timber-and-plaster hut with drying racks, work tables, and a central hearth. Use as a profession anchor or to seed crafting-focused points of interest."
+}

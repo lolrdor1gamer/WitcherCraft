@@ -1,0 +1,139 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [11, 7, 11],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "F": "witchercraft:kaedweni_stone_foundation",
+    "=": "minecraft:spruce_planks",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "witchercraft:kaedweni_plaster_wall",
+    "W": "minecraft:glass_pane",
+    "C": "witchercraft:supply_crate_kaedwen",
+    "K": "minecraft:brewing_stand",
+    "A": "minecraft:barrel[facing=north]",
+    "H": "minecraft:campfire",
+    "L": "witchercraft:frostglass_lantern",
+    "b": "minecraft:bed[facing=west,part=foot]",
+    "h": "minecraft:bed[facing=west,part=head]",
+    "t": "minecraft:spruce_door[facing=south,half=lower,hinge=right,open=false]",
+    "T": "minecraft:spruce_door[facing=south,half=upper,hinge=right,open=false]",
+    "S": "witchercraft:kaedweni_roof_shingle_slab"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "FFFFFFFFFFF",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "FFFFFFFFFFF"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#BPPPPPPPB#",
+  "BPtPPPPPttB",
+  "BPWWPWPWWPB",
+  "BPPAAAHPPPB",
+  "BPPHHHPPPPB",
+  "BPPCCCCCPPB",
+  "BPPKKKPPPPB",
+  "BPWWPWPWWPB",
+  "BPPbbhhPPPB",
+  "BPPhhbbPPPB",
+        "#BPPPPPPB#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#BT#####TB#",
+        "BPPPPPPPPB",
+        "BP#######PB",
+        "BP##L#L##PB",
+        "BP#######PB",
+        "BP##L#L##PB",
+        "BP#######PB",
+        "BP#######PB",
+        "BP###LL###B",
+        "BP#######PB",
+        "#BPPPPPPB#"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "#B#######B#",
+        "BPPPPPPPPB",
+        "BP#######PB",
+        "BP##A#A##PB",
+        "BP#######PB",
+        "BP##L#L##PB",
+        "BP#######PB",
+        "BP#######PB",
+        "BP###LL###B",
+        "BP#######PB",
+        "#B#######B#"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "###SSSSS###",
+        "##SSSSSSS##",
+        "#SSSSSSSSS#",
+        "#SSSSSSSSS#",
+        "SSSSSSSSSSS",
+        "#SSSSSSSSS#",
+        "#SSSSSSSSS#",
+        "##SSSSSSS##",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###"
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "###SSSSS###",
+        "###SSSSS###",
+        "##SSSSSSS##",
+        "##SSSSSSS##",
+        "#SSSSSSSSS#",
+        "##SSSSSSS##",
+        "##SSSSSSS##",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###"
+      ]
+    },
+    {
+      "y": 6,
+      "rows": [
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###",
+        "##SSSSSSS##",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_tavern_inn",
+  "notes": "Large inn with bar, hearth, keg storage, and bunk area for travelers."
+}

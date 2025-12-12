@@ -1,0 +1,94 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [7, 5, 9],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "F": "witchercraft:kaedweni_stone_foundation",
+    "=": "minecraft:spruce_planks",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "witchercraft:kaedweni_plaster_wall",
+    "W": "minecraft:glass_pane",
+    "C": "minecraft:chest[facing=north]",
+    "b": "minecraft:bed[facing=south,part=foot]",
+    "h": "minecraft:bed[facing=south,part=head]",
+    "L": "witchercraft:frostglass_lantern",
+    "t": "minecraft:spruce_door[facing=south,half=lower,hinge=left,open=false]",
+    "T": "minecraft:spruce_door[facing=south,half=upper,hinge=left,open=false]",
+    "S": "witchercraft:kaedweni_roof_shingle_slab"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "FFFFFFF",
+        "F=====F",
+        "F=====F",
+        "F=====F",
+        "F=====F",
+        "F=====F",
+        "F=====F",
+        "F=====F",
+        "FFFFFFF"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#BtPPtB#",
+        "BPPPPPPB",
+        "BPWPPWPB",
+        "BPPCCPPB",
+        "BPPbhPPB",
+        "BPPbhPPB",
+        "BPWPPWPB",
+        "BPPPPPPB",
+        "#BPPPPB#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#BT###B#",
+        "BPPPPPPB",
+        "BP#####PB",
+        "BP##L##PB",
+        "BP#####PB",
+        "BP##L##PB",
+        "BP#####PB",
+        "BPPPPPPB",
+        "#BPPPPB#"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "###SSS##",
+        "##SSSSS#",
+        "#SSSSSSS",
+        "#SSSSSSS",
+        "SSSSSSSS",
+        "#SSSSSSS",
+        "#SSSSSSS",
+        "##SSSSS#",
+        "###SSS##"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "###SSS##",
+        "###SSS##",
+        "##SSSSS#",
+        "##SSSSS#",
+        "#SSSSSSS",
+        "##SSSSS#",
+        "##SSSSS#",
+        "###SSS##",
+        "###SSS##"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_house_small_a",
+  "notes": "Single-storey residence with bed alcove, double chests, and clerestory lanterns."
+}

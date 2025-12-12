@@ -1,0 +1,42 @@
+{
+  "name": "witchercraft:kaedwen_village/perimeter",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/palisade_gatehouse",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/watchtower",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/dock_jetty",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/fields_garden",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

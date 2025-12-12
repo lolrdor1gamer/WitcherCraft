@@ -1,0 +1,42 @@
+{
+  "name": "witchercraft:kaedwen_village/housing",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/house_small_a",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/house_small_b",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/house_lofted",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/herbalist_hut",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "base": "witchercraft:white_gull",
+  "reagent": "witchercraft:mandrake_distillate",
+  "catalyst": "witchercraft:alghoul_bone_marrow",
+  "result": {
+    "item": "witchercraft:white_raffard_decoction",
+    "count": 1
+  }
+}

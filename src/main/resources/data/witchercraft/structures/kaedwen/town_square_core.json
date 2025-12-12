@@ -1,0 +1,67 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [7, 4, 7],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "D": "minecraft:podzol",
+    "P": "minecraft:cobblestone",
+    "F": "witchercraft:frozen_well_core",
+    "N": "witchercraft:kaedweni_notice_board",
+    "C": "witchercraft:supply_crate_kaedwen",
+    "R": "minecraft:spruce_fence",
+    "L": "witchercraft:frostglass_lantern"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "DDDDDDD",
+        "DDPPPDD",
+        "DPPNPPD",
+        "PCPFPCP",
+        "DPPPPPD",
+        "DDPPPDD",
+        "DDDDDDD"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#######",
+        "##R#R##",
+        "#######",
+        "###F###",
+        "#######",
+        "##R#R##",
+        "#######"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#######",
+        "##L#L##",
+        "#######",
+        "###F###",
+        "#######",
+        "##L#L##",
+        "#######"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "#######",
+        "#######",
+        "#######",
+        "###F###",
+        "#######",
+        "#######",
+        "#######"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_town_square_supplies",
+  "notes": "Central plaza with a frozen well, notice board to the south, and paired lantern posts. Convert to .nbt and mirror for plazas or contract hubs."
+}

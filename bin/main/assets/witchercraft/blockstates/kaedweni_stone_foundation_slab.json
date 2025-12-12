@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "witchercraft:block/kaedweni_stone_foundation_slab" },
+    "type=top": { "model": "witchercraft:block/kaedweni_stone_foundation_slab_top" },
+    "type=double": { "model": "witchercraft:block/kaedweni_stone_foundation_slab_double" }
+  }
+}

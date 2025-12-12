@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "hanging=false": { "model": "witchercraft:block/frostglass_lantern" },
+    "hanging=true": { "model": "witchercraft:block/frostglass_lantern_hanging" }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [7, 9, 7],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "F": "witchercraft:kaedweni_stone_foundation",
+    "S": "minecraft:cobbled_deepslate",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "minecraft:spruce_planks",
+    "L": "witchercraft:frostglass_lantern",
+    "G": "minecraft:grindstone[facing=east]",
+    "C": "minecraft:chest[facing=north]",
+    "f": "minecraft:ladder[facing=north]"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "FFFFFFF",
+        "FSSSSSF",
+        "FSSFSSF",
+        "FSSFFSF",
+        "FSSFSSF",
+        "FSSSSSF",
+        "FFFFFFF"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#BBBBB#",
+        "BPPPPPB",
+        "BPCLLPB",
+        "BPPfPPB",
+        "BPCLGPB",
+        "BPPPPPB",
+        "#BBBBB#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#BBBBB#",
+        "BPPPPPB",
+        "BPPPPPB",
+        "BPPfPPB",
+        "BPPPPPB",
+        "BPPPPPB",
+        "#BBBBB#"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "#BBBBB#",
+        "BPPPPPB",
+        "BPPPPPB",
+        "BPPfPPB",
+        "BPPPPPB",
+        "BPPPPPB",
+        "#BBBBB#"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "#BBBBB#",
+        "BPPPPPB",
+        "BPPPPPB",
+        "BPPfPPB",
+        "BPPPPPB",
+        "BPPPPPB",
+        "#BBBBB#"
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "#BBBBB#",
+        "BPLLLPB",
+        "BPLLLPB",
+        "BPLfLPB",
+        "BPLLLPB",
+        "BPLLLPB",
+        "#BBBBB#"
+      ]
+    },
+    {
+      "y": 6,
+      "rows": [
+        "##PPP##",
+        "#PPPPP#",
+        "#PPPPP#",
+        "#PPPPP#",
+        "#PPPPP#",
+        "#PPPPP#",
+        "##PPP##"
+      ]
+    },
+    {
+      "y": 7,
+      "rows": [
+        "##PPP##",
+        "##PPP##",
+        "#PPPPP#",
+        "#PPPPP#",
+        "#PPPPP#",
+        "##PPP##",
+        "##PPP##"
+      ]
+    },
+    {
+      "y": 8,
+      "rows": [
+        "##PPP##",
+        "##PPP##",
+        "##PPP##",
+        "#PPPPP#",
+        "##PPP##",
+        "##PPP##",
+        "##PPP##"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_watchtower",
+  "notes": "Tall palisade tower with interior ladder, lantern watch level, and roof deck."
+}

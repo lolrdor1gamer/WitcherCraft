@@ -1,0 +1,121 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [9, 6, 11],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "F": "witchercraft:kaedweni_stone_foundation",
+    "=": "minecraft:cobbled_deepslate",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "witchercraft:kaedweni_plaster_wall",
+    "H": "witchercraft:witcher_forge_hearth",
+    "A": "minecraft:anvil[facing=w]",
+    "G": "minecraft:grindstone[facing=north]",
+    "V": "minecraft:blast_furnace[facing=north]",
+    "L": "witchercraft:frostglass_lantern",
+    "C": "witchercraft:supply_crate_kaedwen",
+    "t": "minecraft:spruce_door[facing=south,half=lower,hinge=right,open=false]",
+    "T": "minecraft:spruce_door[facing=south,half=upper,hinge=right,open=false]",
+    "S": "witchercraft:kaedweni_roof_shingle_slab"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "FFFFFFFFF",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "FFFFFFFFF"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#B##t##B#",
+        "#BP##PPB#",
+        "#BA##A#B#",
+        "#BP##L#B#",
+        "#BP##HPB#",
+        "#BV##GPB#",
+        "#BC##CPB#",
+        "#BC##CPB#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BPPPPPB#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#B##T##B#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BP##L#B#",
+        "#BP##L#B#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BPPPPPB#"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "#B#####B#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BP##L#B#",
+        "#BP##L#B#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#BP##PPB#",
+        "#B#####B#"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "###SSS###",
+        "##SSSSS##",
+        "#SSSSSSS#",
+        "#SSSSSSS#",
+        "SSSSSSSSS",
+        "#SSSSSSS#",
+        "#SSSSSSS#",
+        "##SSSSS##",
+        "###SSS###",
+        "###SSS###",
+        "###SSS###"
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "###SSS###",
+        "###SSS###",
+        "##SSSSS##",
+        "##SSSSS##",
+        "#SSSSSSS#",
+        "##SSSSS##",
+        "##SSSSS##",
+        "###SSS###",
+        "###SSS###",
+        "###SSS###",
+        "###SSS###"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_witcher_forge",
+  "notes": "Open-forge module with hearth, anvils, grindstone, and crate storage. Pair with profession POI and attach to street modules."
+}

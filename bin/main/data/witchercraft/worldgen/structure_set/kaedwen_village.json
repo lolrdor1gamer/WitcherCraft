@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "witchercraft:kaedwen_village",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 147325123,
+    "spacing": 35,
+    "separation": 20
+  }
+}

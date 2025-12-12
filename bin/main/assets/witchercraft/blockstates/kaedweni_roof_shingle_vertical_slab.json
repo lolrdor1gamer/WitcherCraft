@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "double=true": { "model": "witchercraft:block/kaedweni_roof_shingles" },
+    "double=false,facing=north": { "model": "witchercraft:block/kaedweni_roof_shingle_vertical_slab" },
+    "double=false,facing=south": { "model": "witchercraft:block/kaedweni_roof_shingle_vertical_slab", "y": 180 },
+    "double=false,facing=east": { "model": "witchercraft:block/kaedweni_roof_shingle_vertical_slab", "y": 90 },
+    "double=false,facing=west": { "model": "witchercraft:block/kaedweni_roof_shingle_vertical_slab", "y": 270 }
+  }
+}

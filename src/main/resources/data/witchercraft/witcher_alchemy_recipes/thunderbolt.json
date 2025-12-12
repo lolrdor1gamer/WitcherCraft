@@ -1,0 +1,9 @@
+{
+  "base": "witchercraft:dwarven_spirit",
+  "reagent": "witchercraft:basilisk_venom_gland",
+  "catalyst": "witchercraft:fulminating_ember_dust",
+  "result": {
+    "item": "witchercraft:thunderbolt_potion",
+    "count": 1
+  }
+}

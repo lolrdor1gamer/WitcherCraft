@@ -1,0 +1,109 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [9, 6, 9],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "F": "witchercraft:kaedweni_stone_foundation",
+    "=": "minecraft:spruce_planks",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "witchercraft:kaedweni_plaster_wall",
+    "W": "minecraft:glass_pane",
+    "C": "minecraft:chest[facing=south]",
+    "b": "minecraft:bed[facing=west,part=foot]",
+    "h": "minecraft:bed[facing=west,part=head]",
+    "L": "witchercraft:frostglass_lantern",
+    "S": "witchercraft:kaedweni_roof_shingle_slab",
+    "s": "witchercraft:kaedweni_roof_shingle_stairs[facing=north,half=bottom,shape=straight]",
+    "t": "minecraft:spruce_door[facing=north,half=lower,hinge=left,open=false]",
+    "T": "minecraft:spruce_door[facing=north,half=upper,hinge=left,open=false]"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "FFFFFFFFF",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "FFFFFFFFF"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#BPPPPPB#",
+        "BPPtPPPB",
+        "BPWPPWPB",
+        "BPPCCPPB",
+        "BPPbhPPB",
+        "BPPbhPPB",
+        "BPWLLWPB",
+        "BPPPPPPB",
+        "#BPPPPPB#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#BT###TB#",
+        "BPPPPPPB",
+        "BP#####PB",
+        "BP##L##PB",
+        "BP#####PB",
+        "BP##L##PB",
+        "BP#####PB",
+        "BPPPPPPB",
+        "#BPPPPPB#"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "###sss###",
+        "##sssss##",
+        "#sssssss#",
+        "#sssssss#",
+        "sssssssss",
+        "#sssssss#",
+        "#sssssss#",
+        "##sssss##",
+        "###sss###"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "###SSS###",
+        "##SSSSS##",
+        "#SSSSSSS#",
+        "#SSSSSSS#",
+        "SSSSSSSSS",
+        "#SSSSSSS#",
+        "#SSSSSSS#",
+        "##SSSSS##",
+        "###SSS###"
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "###SSS###",
+        "###SSS###",
+        "##SSSSS##",
+        "##SSSSS##",
+        "#SSSSSSS#",
+        "##SSSSS##",
+        "##SSSSS##",
+        "###SSS###",
+        "###SSS###"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_house_lofted",
+  "notes": "Two-storey residence with loft sleeping area, stair roof slices, and center lantern spine."
+}

@@ -1,0 +1,119 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [11, 6, 11],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "F": "witchercraft:kaedweni_stone_foundation",
+    "=": "minecraft:spruce_planks",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "witchercraft:kaedweni_plaster_wall",
+    "H": "minecraft:hay_block",
+    "L": "witchercraft:frostglass_lantern",
+    "C": "witchercraft:supply_crate_kaedwen",
+    "S": "witchercraft:kaedweni_roof_shingle_slab",
+    "s": "witchercraft:kaedweni_roof_shingle_stairs[facing=north,half=bottom,shape=straight]",
+    "t": "minecraft:spruce_door[facing=west,half=lower,hinge=left,open=false]",
+    "T": "minecraft:spruce_door[facing=west,half=upper,hinge=left,open=false]"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "FFFFFFFFFFF",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "F=========F",
+        "FFFFFFFFFFF"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#BPPPPPPPB#",
+        "BPttPPPPPPB",
+        "BPWHHHHHWPB",
+        "BPHHHHHHPPB",
+        "BPHCCCHHPPB",
+        "BPHHHHHHPPB",
+        "BPWHHHHHWPB",
+        "BPWHHHHHWPB",
+        "BPPHHHPPPPB",
+        "BPPPPPPPPPB",
+        "#BPPPPPPB#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#BT#####TB#",
+        "BPPPPPPPPPB",
+        "BP#######PB",
+        "BP##L#L##PB",
+        "BP#######PB",
+        "BP##L#L##PB",
+        "BP#######PB",
+        "BP#######PB",
+        "BP#######PB",
+        "BPPPPPPPPPB",
+        "#BPPPPPPB#"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "#B#######B#",
+        "BPPPPPPPPPB",
+        "BP#######PB",
+        "BP##H#H##PB",
+        "BP#######PB",
+        "BP##L#L##PB",
+        "BP#######PB",
+        "BP#######PB",
+        "BP#######PB",
+        "BPPPPPPPPPB",
+        "#B#######B#"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "###sssss###",
+        "##sssssss##",
+        "#sssssssss#",
+        "#sssssssss#",
+        "sssssssssss",
+        "#sssssssss#",
+        "#sssssssss#",
+        "##sssssss##",
+        "###sssss###",
+        "###sssss###",
+        "###sssss###"
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "###SSSSS###",
+        "###SSSSS###",
+        "##SSSSSSS##",
+        "##SSSSSSS##",
+        "#SSSSSSSSS#",
+        "##SSSSSSS##",
+        "##SSSSSSS##",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###",
+        "###SSSSS###"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_farmstead_barn",
+  "notes": "Two-storey barn packed with hay bales, supply crates, and double-door entry for wagons." 
+}

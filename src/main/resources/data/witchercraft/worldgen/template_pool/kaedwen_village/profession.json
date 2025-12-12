@@ -1,0 +1,33 @@
+{
+  "name": "witchercraft:kaedwen_village/profession",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/witcher_forge",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/stable_pen",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/farmstead_barn",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    }
+  ]
+}

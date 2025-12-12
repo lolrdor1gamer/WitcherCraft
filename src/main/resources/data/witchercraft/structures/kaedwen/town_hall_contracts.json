@@ -1,0 +1,107 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [9, 6, 9],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "F": "witchercraft:kaedweni_stone_foundation",
+    "=": "minecraft:spruce_planks",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "P": "witchercraft:kaedweni_plaster_wall",
+    "L": "witchercraft:frostglass_lantern",
+    "G": "minecraft:lectern[facing=north]",
+    "N": "witchercraft:kaedweni_notice_board",
+    "C": "witchercraft:supply_crate_kaedwen",
+    "t": "minecraft:spruce_door[facing=south,half=lower,hinge=left,open=false]",
+    "T": "minecraft:spruce_door[facing=south,half=upper,hinge=left,open=false]",
+    "R": "witchercraft:kaedweni_roof_shingle_slab"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "FFFFFFFFF",
+        "FF=====FF",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "F=======F",
+        "FF=====FF",
+        "FFFFFFFFF"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "#BtPPPtB#",
+        "BPPPPPPPB",
+        "BPGLLLGPB",
+        "BPPNNNPPB",
+        "BPPNNNPPB",
+        "BPPNNNPPB",
+        "BPGLLLGPB",
+        "BPPPPPPPB",
+        "#BPPPPPB#"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "#BT###TB#",
+        "BPPPPPPPB",
+        "BP#####PB",
+        "BP#####PB",
+        "BP##L##PB",
+        "BP#####PB",
+        "BP#####PB",
+        "BPPPPPPPB",
+        "#BPPPPPB#"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "#B#####B#",
+        "BPPPPPPPB",
+        "BP#####PB",
+        "BP##C##PB",
+        "BP##L##PB",
+        "BP##C##PB",
+        "BP#####PB",
+        "BPPPPPPPB",
+        "#B#####B#"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "###RRR###",
+        "##RRRRR##",
+        "#RRRRRRR#",
+        "#RRRRRRR#",
+        "RRRRRRRRR",
+        "#RRRRRRR#",
+        "#RRRRRRR#",
+        "##RRRRR##",
+        "###RRR###"
+      ]
+    },
+    {
+      "y": 5,
+      "rows": [
+        "###RRR###",
+        "###RRR###",
+        "##RRRRR##",
+        "##RRRRR##",
+        "#RRRRRRR#",
+        "##RRRRR##",
+        "##RRRRR##",
+        "###RRR###",
+        "###RRR###"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_town_hall",
+  "notes": "Two-storey contract hall with notice boards lining the interior, a lectern dais, and a tall shingle roof. Export as the central civic anchor for Kaedwen villages."
+}

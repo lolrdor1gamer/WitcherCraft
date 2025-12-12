@@ -1,0 +1,70 @@
+{
+  "type": "witchercraft:structure_blueprint",
+  "size": [7, 5, 5],
+  "origin": "bottom_south_west",
+  "palette": {
+    "#": "minecraft:air",
+    "G": "minecraft:gravel",
+    "S": "minecraft:spruce_planks",
+    "R": "witchercraft:reinforced_palisade_log",
+    "T": "minecraft:stone_bricks",
+    "P": "witchercraft:gatehouse_portcullis",
+    "B": "witchercraft:kaedweni_timber_beam",
+    "C": "minecraft:chain",
+    "L": "witchercraft:frostglass_lantern"
+  },
+  "layers": [
+    {
+      "y": 0,
+      "rows": [
+        "GGGGGGG",
+        "RRSSSRR",
+        "RRTSPTR",
+        "RRSSSRR",
+        "GGGGGGG"
+      ]
+    },
+    {
+      "y": 1,
+      "rows": [
+        "BRR#RRB",
+        "RRB#BRR",
+        "RRTPPTR",
+        "RRB#BRR",
+        "BRR#RRB"
+      ]
+    },
+    {
+      "y": 2,
+      "rows": [
+        "BRR#RRB",
+        "RRS#SRR",
+        "RRC#CRR",
+        "RRS#SRR",
+        "BRR#RRB"
+      ]
+    },
+    {
+      "y": 3,
+      "rows": [
+        "BRR#RRB",
+        "RRL#LRR",
+        "RRC#CRR",
+        "RRL#LRR",
+        "BRR#RRB"
+      ]
+    },
+    {
+      "y": 4,
+      "rows": [
+        "BRR#RRB",
+        "RRR#RRR",
+        "RRR#RRR",
+        "RRR#RRR",
+        "BRR#RRB"
+      ]
+    }
+  ],
+  "loot_table": "witchercraft:structures/kaedwen_gatehouse_cache",
+  "notes": "Two-layer palisade gate with a hanging portcullis, lantern hooks, and chain counterweights. Add to settlement approaches or stitch into walls with mirrored copies."
+}

@@ -1,0 +1,9 @@
+{
+  "base": "witchercraft:aether_extract",
+  "reagent": "witchercraft:griffin_feathers",
+  "catalyst": "witchercraft:stammelfords_dust",
+  "result": {
+    "item": "witchercraft:tawny_owl_potion",
+    "count": 1
+  }
+}

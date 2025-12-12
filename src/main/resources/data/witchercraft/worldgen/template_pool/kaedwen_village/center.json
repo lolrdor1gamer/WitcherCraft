@@ -1,0 +1,33 @@
+{
+  "name": "witchercraft:kaedwen_village/center",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 3,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/town_square_core",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/town_hall_contracts",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    },
+    {
+      "weight": 2,
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "witchercraft:kaedwen/tavern_inn",
+        "processors": "witchercraft:kaedwen_village/base",
+        "projection": "rigid"
+      }
+    }
+  ]
+}
