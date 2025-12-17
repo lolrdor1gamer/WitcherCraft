@@ -1,3 +1,6 @@
 {
-  "parent": "witchercraft:block/herbal_drying_rack"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "witchercraft:block/herbal_drying_rack"
+  }
 }

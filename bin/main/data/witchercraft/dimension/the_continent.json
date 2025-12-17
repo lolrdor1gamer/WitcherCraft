@@ -1,0 +1,11 @@
+{
+  "type": "witchercraft:the_continent",
+  "generator": {
+    "type": "minecraft:noise",
+    "biome_source": {
+      "type": "witchercraft:continent_biome_source",
+      "default_biome": "witchercraft:temerian_farmlands"
+    },
+    "settings": "minecraft:overworld"
+  }
+}

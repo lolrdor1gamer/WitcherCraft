@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import org.tgr.witchercraft.Witchercraft;
+import org.tgr.witchercraft.block.QuestBoardBlock;
 import org.tgr.witchercraft.block.WitcherForge.WitcherForgeBlock;
 import org.tgr.witchercraft.block.alchemy.AlchemyTableBlock;
 import org.tgr.witchercraft.block.kaedwen.FrostglassLanternBlock;
@@ -32,6 +33,7 @@ import org.tgr.witchercraft.block.kaedwen.NoticeBoardBlock;
 import org.tgr.witchercraft.block.kaedwen.PortcullisBlock;
 import org.tgr.witchercraft.block.kaedwen.ReinforcedPalisadeBlock;
 import org.tgr.witchercraft.block.kaedwen.SupplyCrateBlock;
+import org.tgr.witchercraft.faction.Faction;
 
 import java.util.Objects;
 import java.util.function.Function;
@@ -46,6 +48,77 @@ public final class ModBlocks {
         "alchemy_table",
         properties -> new AlchemyTableBlock(properties.strength(2.5F).requiresCorrectToolForDrops()),
         BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)
+    );
+
+    // Quest Boards for each faction
+    public static final Block QUEST_BOARD_KAEDWEN = registerBlock(
+        "quest_board_kaedwen",
+        () -> BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WOOD)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            .strength(2.0F),
+        properties -> new QuestBoardBlock(properties, Faction.KAEDWEN)
+    );
+
+    public static final Block QUEST_BOARD_REDANIA = registerBlock(
+        "quest_board_redania",
+        () -> BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WOOD)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            .strength(2.0F),
+        properties -> new QuestBoardBlock(properties, Faction.REDANIA)
+    );
+
+    public static final Block QUEST_BOARD_TEMERIA = registerBlock(
+        "quest_board_temeria",
+        () -> BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WOOD)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            .strength(2.0F),
+        properties -> new QuestBoardBlock(properties, Faction.TEMERIA)
+    );
+
+    public static final Block QUEST_BOARD_NILFGAARD = registerBlock(
+        "quest_board_nilfgaard",
+        () -> BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WOOD)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            .strength(2.0F),
+        properties -> new QuestBoardBlock(properties, Faction.NILFGAARD)
+    );
+
+    public static final Block QUEST_BOARD_SKELLIGE = registerBlock(
+        "quest_board_skellige",
+        () -> BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WOOD)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            .strength(2.0F),
+        properties -> new QuestBoardBlock(properties, Faction.SKELLIGE)
+    );
+
+    public static final Block QUEST_BOARD_WITCHERS = registerBlock(
+        "quest_board_witchers",
+        () -> BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WOOD)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            .strength(2.0F),
+        properties -> new QuestBoardBlock(properties, Faction.WITCHERS)
+    );
+
+    public static final Block QUEST_BOARD_SCOIA_TAEL = registerBlock(
+        "quest_board_scoia_tael",
+        () -> BlockBehaviour.Properties.of()
+            .mapColor(MapColor.WOOD)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+            .strength(2.0F),
+        properties -> new QuestBoardBlock(properties, Faction.SCOIA_TAEL)
     );
 
     public static final Block WITCHER_FORGE = register(
@@ -232,6 +305,16 @@ public final class ModBlocks {
     public static final Item ALCHEMY_TABLE_ITEM = registerBlockItem("alchemy_table", ALCHEMY_TABLE);
     public static final Item GRINDSTONE_WITCHER_ITEM = registerBlockItem("grindstone_witcher", GRINDSTONE_WITCHER);
     public static final Item WITCHER_FORGE_ITEM = registerBlockItem("witcher_forge_block", WITCHER_FORGE);
+    
+    // Quest Board Items
+    public static final Item QUEST_BOARD_KAEDWEN_ITEM = registerBlockItem("quest_board_kaedwen", QUEST_BOARD_KAEDWEN);
+    public static final Item QUEST_BOARD_REDANIA_ITEM = registerBlockItem("quest_board_redania", QUEST_BOARD_REDANIA);
+    public static final Item QUEST_BOARD_TEMERIA_ITEM = registerBlockItem("quest_board_temeria", QUEST_BOARD_TEMERIA);
+    public static final Item QUEST_BOARD_NILFGAARD_ITEM = registerBlockItem("quest_board_nilfgaard", QUEST_BOARD_NILFGAARD);
+    public static final Item QUEST_BOARD_SKELLIGE_ITEM = registerBlockItem("quest_board_skellige", QUEST_BOARD_SKELLIGE);
+    public static final Item QUEST_BOARD_WITCHERS_ITEM = registerBlockItem("quest_board_witchers", QUEST_BOARD_WITCHERS);
+    public static final Item QUEST_BOARD_SCOIA_TAEL_ITEM = registerBlockItem("quest_board_scoia_tael", QUEST_BOARD_SCOIA_TAEL);
+    
     public static final Item KAEDWENI_NOTICE_BOARD_ITEM = registerBlockItem("kaedweni_notice_board", KAEDWENI_NOTICE_BOARD);
     public static final Item HERBAL_DRYING_RACK_ITEM = registerBlockItem("herbal_drying_rack", HERBAL_DRYING_RACK);
     public static final Item FROZEN_WELL_CORE_ITEM = registerBlockItem("frozen_well_core", FROZEN_WELL_CORE);
@@ -275,6 +358,16 @@ public final class ModBlocks {
             entries.accept(ALCHEMY_TABLE_ITEM);
             entries.accept(GRINDSTONE_WITCHER_ITEM);
             entries.accept(WITCHER_FORGE_ITEM);
+            
+            // Quest Boards
+            entries.accept(QUEST_BOARD_KAEDWEN_ITEM);
+            entries.accept(QUEST_BOARD_REDANIA_ITEM);
+            entries.accept(QUEST_BOARD_TEMERIA_ITEM);
+            entries.accept(QUEST_BOARD_NILFGAARD_ITEM);
+            entries.accept(QUEST_BOARD_SKELLIGE_ITEM);
+            entries.accept(QUEST_BOARD_WITCHERS_ITEM);
+            entries.accept(QUEST_BOARD_SCOIA_TAEL_ITEM);
+            
             entries.accept(KAEDWENI_NOTICE_BOARD_ITEM);
             entries.accept(HERBAL_DRYING_RACK_ITEM);
             entries.accept(GATEHOUSE_PORTCULLIS_ITEM);

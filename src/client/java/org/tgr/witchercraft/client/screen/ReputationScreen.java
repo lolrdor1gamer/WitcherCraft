@@ -1,4 +1,4 @@
-package org.tgr.witchercraft.client.reputation;
+package org.tgr.witchercraft.client.screen;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;

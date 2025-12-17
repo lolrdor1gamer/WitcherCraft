@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "witchercraft:item/tawny_owl_potion"
+  }
+}

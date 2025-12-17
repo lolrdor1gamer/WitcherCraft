@@ -1,3 +1,6 @@
 {
-  "parent": "witchercraft:block/reinforced_palisade_log_inventory"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "witchercraft:block/reinforced_palisade_log"
+  }
 }

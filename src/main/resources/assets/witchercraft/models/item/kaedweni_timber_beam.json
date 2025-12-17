@@ -1,3 +1,6 @@
 {
-  "parent": "minecraft:block/stripped_spruce_log"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "witchercraft:block/kaedweni_timber_beam"
+  }
 }

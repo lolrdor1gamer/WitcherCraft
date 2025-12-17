@@ -1,3 +1,6 @@
 {
-  "parent": "witchercraft:block/gatehouse_portcullis"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "witchercraft:block/gatehouse_portcullis"
+  }
 }

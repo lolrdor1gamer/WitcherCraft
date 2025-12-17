@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "witchercraft:item/scaled_griffin_padding"
+  }
+}

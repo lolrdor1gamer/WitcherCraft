@@ -69,10 +69,10 @@ public class WitcherSwordItem extends WitcherItem {
 
     public enum SwordType {
         STEEL(entity -> entity.getType().is(WitcherEntityTypeTags.HUMANOIDS),
-            "message.witchercraft.sword.steel_only",
+            "message.witchercraft.sword.steel_ineffective",
             "tooltip.witchercraft.sword.steel"),
         SILVER(entity -> entity.getType().is(WitcherEntityTypeTags.MONSTERS),
-            "message.witchercraft.sword.silver_only",
+            "message.witchercraft.sword.silver_ineffective",
             "tooltip.witchercraft.sword.silver");
 
         private final Predicate<LivingEntity> predicate;

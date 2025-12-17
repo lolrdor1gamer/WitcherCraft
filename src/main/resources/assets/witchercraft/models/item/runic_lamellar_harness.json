@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "witchercraft:item/runic_lamellar_harness"
+  }
+}

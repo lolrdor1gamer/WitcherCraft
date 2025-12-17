@@ -2,12 +2,14 @@ package org.tgr.witchercraft.signs;
 
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.tgr.witchercraft.player.PlayerAttributes;
 
 import java.util.List;
 
@@ -30,6 +32,24 @@ public class IgniSign extends WitcherSign {
             return false;
         }
         
+        // Calculate sign intensity based on Signs attribute (server-side only)
+        float damageMultiplier = 1.0f;
+        int burnTicks = 100; // Base 5 seconds
+        
+        if (player instanceof ServerPlayer && level instanceof ServerLevel) {
+            // Get player Signs attribute (temporary until SavedData is fixed)
+            PlayerAttributes tempAttributes = new PlayerAttributes();
+            int signsAttribute = tempAttributes.getSigns();
+            
+            // Each Signs point adds 5% intensity
+            damageMultiplier = 1.0f + (signsAttribute * 0.05f);
+            // Each Signs point adds 0.5 seconds (10 ticks) to burn duration
+            burnTicks = 100 + (signsAttribute * 10);
+        }
+        
+        final float finalDamage = 4.0f * damageMultiplier;
+        final int finalBurnTicks = burnTicks;
+        
         Vec3 lookVec = player.getLookAngle();
         Vec3 playerPos = player.getEyePosition();
         
@@ -44,8 +64,8 @@ public class IgniSign extends WitcherSign {
                 
                 // Check if entity is within cone
                 if (angle <= CONE_ANGLE / 2.0) {
-                    target.setRemainingFireTicks(100); // 5 seconds = 100 ticks
-                    target.hurt(target.damageSources().inFire(), 4.0f);
+                    target.setRemainingFireTicks(finalBurnTicks);
+                    target.hurt(target.damageSources().inFire(), finalDamage);
                 }
             }
         }

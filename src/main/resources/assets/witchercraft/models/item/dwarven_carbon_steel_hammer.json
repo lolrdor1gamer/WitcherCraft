@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "witchercraft:item/dwarven_carbon_steel_hammer"
+  }
+}

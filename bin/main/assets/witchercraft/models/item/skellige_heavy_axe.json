@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "witchercraft:item/skellige_heavy_axe"
+  }
+}

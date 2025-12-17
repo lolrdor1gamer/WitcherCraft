@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "witchercraft:item/arachas_hardened_chitin_plate"
+  }
+}

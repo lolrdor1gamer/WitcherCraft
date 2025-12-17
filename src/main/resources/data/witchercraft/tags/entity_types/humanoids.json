@@ -9,6 +9,9 @@
     "minecraft:illusioner",
     "minecraft:witch",
     "minecraft:iron_golem",
-    "minecraft:warden"
+    "minecraft:warden",
+    "witchercraft:kaedweni_soldier",
+    "witchercraft:redanian_guard",
+    "witchercraft:nilfgaardian_scout"
   ]
 }

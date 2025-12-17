@@ -12,6 +12,8 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.component.Consumable;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 import org.tgr.witchercraft.Witchercraft;
@@ -78,6 +80,14 @@ public final class ModItems {
         }));
     public static final Item CELANDINE = register("celandine", WitcherItem::new);
     public static final Item DROWNER_BRAIN = register("drowner_brain", properties -> new WitcherItem(properties.stacksTo(64).food(new FoodProperties(-2, -2, true), Consumable.builder().consumeSeconds(2).onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.POISON, 100, 1))).build()).rarity(Rarity.UNCOMMON)));
+
+    // Humanoid spawn eggs
+    public static final Item KAEDWENI_SOLDIER_SPAWN_EGG = registerSpawnEgg(
+        "kaedweni_soldier_spawn_egg", ModEntities.KAEDWENI_SOLDIER, Rarity.COMMON);
+    public static final Item REDANIAN_GUARD_SPAWN_EGG = registerSpawnEgg(
+        "redanian_guard_spawn_egg", ModEntities.REDANIAN_GUARD, Rarity.COMMON);
+    public static final Item NILFGAARDIAN_SCOUT_SPAWN_EGG = registerSpawnEgg(
+        "nilfgaardian_scout_spawn_egg", ModEntities.NILFGAARDIAN_SCOUT, Rarity.COMMON);
 
     // Forge components - Pommel
     public static final Item DIMERITIUM_POMMEL = registerComponent("dimeritium_pommel", Rarity.RARE, PommelItem::new,
@@ -393,7 +403,21 @@ public final class ModItems {
             }
         });
 
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.SPAWN_EGGS).register(entries -> {
+            entries.accept(KAEDWENI_SOLDIER_SPAWN_EGG);
+            entries.accept(REDANIAN_GUARD_SPAWN_EGG);
+            entries.accept(NILFGAARDIAN_SCOUT_SPAWN_EGG);
+        });
+
         Witchercraft.LOGGER.info("Registered {} items", REGISTERED_IDS.size());
+    }
+
+    private static Item registerSpawnEgg(String name, EntityType<?> entityType, Rarity rarity) {
+        return register(name, properties -> new SpawnEggItem(
+            properties.spawnEgg(entityType)
+                .rarity(rarity)
+                .stacksTo(64)
+        ));
     }
 
     @FunctionalInterface
