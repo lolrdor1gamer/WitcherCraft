@@ -1,7 +1,7 @@
 {
   "type": "witchercraft:the_continent",
   "generator": {
-    "type": "minecraft:noise",
+    "type": "witchercraft:continent_chunk_generator",
     "biome_source": {
       "type": "witchercraft:continent_biome_source",
       "default_biome": "witchercraft:temerian_farmlands"

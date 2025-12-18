@@ -2,6 +2,7 @@ package org.tgr.witchercraft.block.kaedwen;
 
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.Containers;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -54,13 +55,11 @@ public class SupplyCrateBlock extends BaseEntityBlock {
         return InteractionResult.CONSUME;
     }
 
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean movedByPiston) {
-        if (!state.is(newState.getBlock())) {
-            BlockEntity blockEntity = level.getBlockEntity(pos);
-            if (blockEntity instanceof SupplyCrateBlockEntity crate) {
-                Containers.dropContents(level, pos, crate);
-                level.updateNeighbourForOutputSignal(pos, this);
-            }
+    public void onRemove(BlockState state, ServerLevel level, BlockPos pos, boolean movedByPiston) {
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        if (blockEntity instanceof SupplyCrateBlockEntity crate) {
+            Containers.dropContents(level, pos, crate);
+            level.updateNeighbourForOutputSignal(pos, this);
         }
     }
 

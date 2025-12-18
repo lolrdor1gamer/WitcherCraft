@@ -21,6 +21,10 @@ import org.tgr.witchercraft.item.WitcherItem;
 import org.tgr.witchercraft.item.WitcherPotionItem;
 import org.tgr.witchercraft.item.WitcherSwordItem;
 import org.tgr.witchercraft.item.component.*;
+import org.tgr.witchercraft.item.oil.BladeOilItem;
+import org.tgr.witchercraft.item.bomb.BombType;
+import org.tgr.witchercraft.item.bomb.WitcherBombItem;
+import org.tgr.witchercraft.entity.monster.AbstractWitcherMonster;
 import org.tgr.witchercraft.player.WitcherPlayerData;
 
 import java.util.ArrayList;
@@ -78,8 +82,44 @@ public final class ModItems {
             WitcherPlayerData.applyStaminaRegenBoost(player, 20 * 120, 2);
             WitcherPlayerData.applyManaRegenBoost(player, 20 * 120, 1);
         }));
+    // ========================================
+    // ALCHEMY HERBS
+    // ========================================
     public static final Item CELANDINE = register("celandine", WitcherItem::new);
+    public static final Item CROWS_EYE = register("crows_eye", WitcherItem::new);
+    public static final Item BLOWBALL = register("blowball", WitcherItem::new);
+    public static final Item WHITE_MYRTLE = register("white_myrtle", properties -> new WitcherItem(properties.rarity(Rarity.UNCOMMON)));
+    public static final Item WOLFSBANE = register("wolfsbane", WitcherItem::new);
+    public static final Item MANDRAKE_ROOT = register("mandrake_root", properties -> new WitcherItem(properties.rarity(Rarity.UNCOMMON)));
+    public static final Item SEWANT_MUSHROOM = register("sewant_mushroom", WitcherItem::new);
+    public static final Item VERBENA = register("verbena", WitcherItem::new);
+    public static final Item FOOLS_PARSLEY = register("fools_parsley", WitcherItem::new);
+    public static final Item BERBERCANE_FRUIT = register("berbercane_fruit", WitcherItem::new);
+    public static final Item WORMWOOD = register("wormwood", WitcherItem::new);
+    public static final Item HAN = register("han", properties -> new WitcherItem(properties.rarity(Rarity.RARE)));
+    
+    // Monster Drops
     public static final Item DROWNER_BRAIN = register("drowner_brain", properties -> new WitcherItem(properties.stacksTo(64).food(new FoodProperties(-2, -2, true), Consumable.builder().consumeSeconds(2).onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.POISON, 100, 1))).build()).rarity(Rarity.UNCOMMON)));
+
+    // ========================================
+    // CUSTOM ORE MATERIALS (Raw Ores & Ingots)
+    // ========================================
+    
+    // Silver
+    public static final Item RAW_SILVER = register("raw_silver", WitcherItem::new);
+    public static final Item SILVER_INGOT = register("silver_ingot", WitcherItem::new);
+    
+    // Meteorite
+    public static final Item RAW_METEORITE = register("raw_meteorite", properties -> new WitcherItem(properties.rarity(Rarity.RARE)));
+    public static final Item METEORITE_INGOT = register("meteorite_ingot", properties -> new WitcherItem(properties.rarity(Rarity.RARE)));
+    
+    // Dark Iron
+    public static final Item RAW_DARK_IRON = register("raw_dark_iron", WitcherItem::new);
+    public static final Item DARK_IRON_INGOT = register("dark_iron_ingot", WitcherItem::new);
+    
+    // Dimeritium
+    public static final Item RAW_DIMERITIUM = register("raw_dimeritium", properties -> new WitcherItem(properties.rarity(Rarity.UNCOMMON)));
+    public static final Item DIMERITIUM_INGOT = register("dimeritium_ingot", properties -> new WitcherItem(properties.rarity(Rarity.UNCOMMON)));
 
     // Humanoid spawn eggs
     public static final Item KAEDWENI_SOLDIER_SPAWN_EGG = registerSpawnEgg(
@@ -88,6 +128,64 @@ public final class ModItems {
         "redanian_guard_spawn_egg", ModEntities.REDANIAN_GUARD, Rarity.COMMON);
     public static final Item NILFGAARDIAN_SCOUT_SPAWN_EGG = registerSpawnEgg(
         "nilfgaardian_scout_spawn_egg", ModEntities.NILFGAARDIAN_SCOUT, Rarity.COMMON);
+
+    // Monster spawn eggs
+    public static final Item DROWNED_CORPSE_SPAWN_EGG = registerSpawnEgg(
+        "drowned_corpse_spawn_egg", ModEntities.DROWNED_CORPSE, Rarity.COMMON);
+    public static final Item NEKKER_SPAWN_EGG = registerSpawnEgg(
+        "nekker_spawn_egg", ModEntities.NEKKER, Rarity.COMMON);
+    public static final Item GHOUL_SPAWN_EGG = registerSpawnEgg(
+        "ghoul_spawn_egg", ModEntities.GHOUL, Rarity.COMMON);
+    public static final Item ALGHOUL_SPAWN_EGG = registerSpawnEgg(
+        "alghoul_spawn_egg", ModEntities.ALGHOUL, Rarity.UNCOMMON);
+    public static final Item WRAITH_SPAWN_EGG = registerSpawnEgg(
+        "wraith_spawn_egg", ModEntities.WRAITH, Rarity.UNCOMMON);
+    public static final Item WEREWOLF_SPAWN_EGG = registerSpawnEgg(
+        "werewolf_spawn_egg", ModEntities.WEREWOLF, Rarity.RARE);
+
+    // Blade Oils
+    public static final Item NECROPHAGE_OIL = register("necrophage_oil", properties ->
+        new BladeOilItem(properties.stacksTo(16).rarity(Rarity.UNCOMMON), 
+            AbstractWitcherMonster.MonsterCategory.NECROPHAGE, 1.5f, 20));
+    public static final Item SPECTER_OIL = register("specter_oil", properties ->
+        new BladeOilItem(properties.stacksTo(16).rarity(Rarity.UNCOMMON), 
+            AbstractWitcherMonster.MonsterCategory.SPECTER, 1.5f, 20));
+    public static final Item CURSED_OIL = register("cursed_oil", properties ->
+        new BladeOilItem(properties.stacksTo(16).rarity(Rarity.UNCOMMON), 
+            AbstractWitcherMonster.MonsterCategory.CURSED, 1.5f, 20));
+    public static final Item BEAST_OIL = register("beast_oil", properties ->
+        new BladeOilItem(properties.stacksTo(16).rarity(Rarity.UNCOMMON), 
+            AbstractWitcherMonster.MonsterCategory.BEAST, 1.5f, 20));
+    public static final Item HYBRID_OIL = register("hybrid_oil", properties ->
+        new BladeOilItem(properties.stacksTo(16).rarity(Rarity.UNCOMMON), 
+            AbstractWitcherMonster.MonsterCategory.HYBRID, 1.5f, 20));
+    public static final Item INSECTOID_OIL = register("insectoid_oil", properties ->
+        new BladeOilItem(properties.stacksTo(16).rarity(Rarity.UNCOMMON), 
+            AbstractWitcherMonster.MonsterCategory.INSECTOID, 1.5f, 20));
+    public static final Item VAMPIRE_OIL = register("vampire_oil", properties ->
+        new BladeOilItem(properties.stacksTo(16).rarity(Rarity.RARE), 
+            AbstractWitcherMonster.MonsterCategory.VAMPIRE, 1.5f, 20));
+    public static final Item RELICT_OIL = register("relict_oil", properties ->
+        new BladeOilItem(properties.stacksTo(16).rarity(Rarity.RARE), 
+            AbstractWitcherMonster.MonsterCategory.RELICT, 1.5f, 20));
+
+    // Witcher Bombs
+    public static final Item GRAPESHOT_BOMB = register("grapeshot_bomb", properties ->
+        new WitcherBombItem(properties.stacksTo(10).rarity(Rarity.UNCOMMON), BombType.GRAPESHOT));
+    public static final Item DANCING_STAR_BOMB = register("dancing_star_bomb", properties ->
+        new WitcherBombItem(properties.stacksTo(10).rarity(Rarity.UNCOMMON), BombType.DANCING_STAR));
+    public static final Item DEVILS_PUFFBALL_BOMB = register("devils_puffball_bomb", properties ->
+        new WitcherBombItem(properties.stacksTo(10).rarity(Rarity.UNCOMMON), BombType.DEVILS_PUFFBALL));
+    public static final Item SAMUM_BOMB = register("samum_bomb", properties ->
+        new WitcherBombItem(properties.stacksTo(10).rarity(Rarity.UNCOMMON), BombType.SAMUM));
+    public static final Item NORTHERN_WIND_BOMB = register("northern_wind_bomb", properties ->
+        new WitcherBombItem(properties.stacksTo(10).rarity(Rarity.RARE), BombType.NORTHERN_WIND));
+    public static final Item DIMERITIUM_BOMB = register("dimeritium_bomb", properties ->
+        new WitcherBombItem(properties.stacksTo(10).rarity(Rarity.RARE), BombType.DIMERITIUM));
+    public static final Item DRAGONS_DREAM_BOMB = register("dragons_dream_bomb", properties ->
+        new WitcherBombItem(properties.stacksTo(10).rarity(Rarity.RARE), BombType.DRAGONS_DREAM));
+    public static final Item MOON_DUST_BOMB = register("moon_dust_bomb", properties ->
+        new WitcherBombItem(properties.stacksTo(10).rarity(Rarity.UNCOMMON), BombType.MOON_DUST));
 
     // Forge components - Pommel
     public static final Item DIMERITIUM_POMMEL = registerComponent("dimeritium_pommel", Rarity.RARE, PommelItem::new,
@@ -395,9 +493,54 @@ public final class ModItems {
             entries.accept(TAWNY_OWL_POTION);
         });
 
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> {
+            // Blade Oils
+            entries.accept(NECROPHAGE_OIL);
+            entries.accept(SPECTER_OIL);
+            entries.accept(CURSED_OIL);
+            entries.accept(BEAST_OIL);
+            entries.accept(HYBRID_OIL);
+            entries.accept(INSECTOID_OIL);
+            entries.accept(VAMPIRE_OIL);
+            entries.accept(RELICT_OIL);
+            // Witcher Bombs
+            entries.accept(GRAPESHOT_BOMB);
+            entries.accept(DANCING_STAR_BOMB);
+            entries.accept(DEVILS_PUFFBALL_BOMB);
+            entries.accept(SAMUM_BOMB);
+            entries.accept(NORTHERN_WIND_BOMB);
+            entries.accept(DIMERITIUM_BOMB);
+            entries.accept(DRAGONS_DREAM_BOMB);
+            entries.accept(MOON_DUST_BOMB);
+        });
+
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
+            // Alchemy Herbs
             entries.accept(CELANDINE);
+            entries.accept(CROWS_EYE);
+            entries.accept(BLOWBALL);
+            entries.accept(WHITE_MYRTLE);
+            entries.accept(WOLFSBANE);
+            entries.accept(MANDRAKE_ROOT);
+            entries.accept(SEWANT_MUSHROOM);
+            entries.accept(VERBENA);
+            entries.accept(FOOLS_PARSLEY);
+            entries.accept(BERBERCANE_FRUIT);
+            entries.accept(WORMWOOD);
+            entries.accept(HAN);
+            
+            // Monster Drops
             entries.accept(DROWNER_BRAIN);
+            
+            // Custom Ore Materials
+            entries.accept(RAW_SILVER);
+            entries.accept(SILVER_INGOT);
+            entries.accept(RAW_METEORITE);
+            entries.accept(METEORITE_INGOT);
+            entries.accept(RAW_DARK_IRON);
+            entries.accept(DARK_IRON_INGOT);
+            entries.accept(RAW_DIMERITIUM);
+            entries.accept(DIMERITIUM_INGOT);
             for (Item component : FORGE_COMPONENTS) {
                 entries.accept(component);
             }
@@ -407,6 +550,13 @@ public final class ModItems {
             entries.accept(KAEDWENI_SOLDIER_SPAWN_EGG);
             entries.accept(REDANIAN_GUARD_SPAWN_EGG);
             entries.accept(NILFGAARDIAN_SCOUT_SPAWN_EGG);
+            // Monster spawn eggs
+            entries.accept(DROWNED_CORPSE_SPAWN_EGG);
+            entries.accept(NEKKER_SPAWN_EGG);
+            entries.accept(GHOUL_SPAWN_EGG);
+            entries.accept(ALGHOUL_SPAWN_EGG);
+            entries.accept(WRAITH_SPAWN_EGG);
+            entries.accept(WEREWOLF_SPAWN_EGG);
         });
 
         Witchercraft.LOGGER.info("Registered {} items", REGISTERED_IDS.size());

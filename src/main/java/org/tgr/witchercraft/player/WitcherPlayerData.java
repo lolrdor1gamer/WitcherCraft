@@ -61,6 +61,29 @@ public final class WitcherPlayerData {
         return MAX_TOXICITY;
     }
 
+    public static int getSkillPoints(Player player) {
+        return stats(player).skillPoints;
+    }
+
+    public static void addSkillPoints(Player player, int delta) {
+        Stats stats = stats(player);
+        int newValue = Math.max(0, stats.skillPoints + delta);
+        if (newValue != stats.skillPoints) {
+            stats.skillPoints = newValue;
+            stats.markDirty();
+        }
+    }
+
+    public static boolean spendSkillPoint(Player player) {
+        Stats stats = stats(player);
+        if (stats.skillPoints > 0) {
+            stats.skillPoints--;
+            stats.markDirty();
+            return true;
+        }
+        return false;
+    }
+
     public static int getSignCooldown(Player player, String signName) {
         return stats(player).cooldowns.getOrDefault(signName, 0);
     }
@@ -264,6 +287,7 @@ public final class WitcherPlayerData {
         private int stamina = MAX_STAMINA;
         private int mana = MAX_MANA;
         private int toxicity = 0;
+        private int skillPoints = 0;
         private final Map<String, Integer> cooldowns = new Object2ObjectOpenHashMap<>();
         private int staminaRegenBonusTicks;
         private int staminaRegenBonusAmount;
@@ -281,6 +305,7 @@ public final class WitcherPlayerData {
             stats.stamina = this.stamina;
             stats.mana = this.mana;
             stats.toxicity = this.toxicity;
+            stats.skillPoints = this.skillPoints;
             stats.cooldowns.putAll(this.cooldowns);
             stats.staminaRegenBonusTicks = this.staminaRegenBonusTicks;
             stats.staminaRegenBonusAmount = this.staminaRegenBonusAmount;

@@ -39,4 +39,25 @@ public class ClientNetworking {
             ClientPlayNetworking.send(new RequestPlayerDataPacket());
         }
     }
+    
+    /**
+     * Send a meditation request to the server
+     * @param hours Number of in-game hours to skip (1-12)
+     */
+    public static void sendMeditationRequest(int hours) {
+        if (ClientPlayNetworking.canSend(MeditationRequestPacket.TYPE)) {
+            ClientPlayNetworking.send(new MeditationRequestPacket(hours));
+        }
+    }
+    
+    /**
+     * Send a dodge request to the server
+     * @param forward Forward movement direction (-1, 0, 1)
+     * @param strafe Strafe movement direction (-1, 0, 1)
+     */
+    public static void sendDodgeRequest(double forward, double strafe) {
+        if (ClientPlayNetworking.canSend(DodgeRequestPacket.TYPE)) {
+            ClientPlayNetworking.send(new DodgeRequestPacket(forward, strafe));
+        }
+    }
 }

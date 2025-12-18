@@ -166,4 +166,13 @@ public class RegionProvider {
         coastal = (coastal + 1.0) / 2.0;
         return coastal > 0.6;
     }
+    
+    /**
+     * Gets a noise value for special biome placement (0.0 to 1.0).
+     * Used for rare biomes like Battlefields, Ancient Ruins, Cursed Swamps.
+     */
+    public double getSpecialBiomeNoise(int x, int z) {
+        double special = sampleNoise(x, z, REGION_SCALE * 0.5, 55555L);
+        return (special + 1.0) / 2.0;
+    }
 }

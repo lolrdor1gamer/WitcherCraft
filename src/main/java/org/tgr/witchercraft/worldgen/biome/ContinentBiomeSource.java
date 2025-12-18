@@ -49,15 +49,46 @@ public class ContinentBiomeSource extends BiomeSource {
         }
         
         return Stream.of(
+            // Temeria
             BiomeHolderCache.get(WitcherBiomes.TEMERIAN_FARMLANDS),
             BiomeHolderCache.get(WitcherBiomes.MAHAKAMAN_FOOTHILLS),
             BiomeHolderCache.get(WitcherBiomes.PONTAR_RIVERLANDS),
+            BiomeHolderCache.get(WitcherBiomes.BROKILON_FOREST),
+            
+            // Kaedwen
             BiomeHolderCache.get(WitcherBiomes.MOUNTAIN_PEAKS),
             BiomeHolderCache.get(WitcherBiomes.FROZEN_TAIGA),
-            BiomeHolderCache.get(WitcherBiomes.NO_MANS_LAND),
+            BiomeHolderCache.get(WitcherBiomes.MINE_VALLEYS),
+            BiomeHolderCache.get(WitcherBiomes.GLACIAL_LAKES),
+            BiomeHolderCache.get(WitcherBiomes.MAHAKAMAN_MOUNTAINS),
+            
+            // Redania
             BiomeHolderCache.get(WitcherBiomes.REDANIAN_PLAINS),
+            BiomeHolderCache.get(WitcherBiomes.OXENFURT_LAKES),
+            
+            // Nilfgaard
             BiomeHolderCache.get(WitcherBiomes.NILFGAARDIAN_SCRUBLAND),
-            BiomeHolderCache.get(WitcherBiomes.SKELLIGE_COAST)
+            BiomeHolderCache.get(WitcherBiomes.SOUTHERN_PLAINS),
+            BiomeHolderCache.get(WitcherBiomes.OLIVE_GROVES),
+            BiomeHolderCache.get(WitcherBiomes.IMPERIAL_GARDENS),
+            BiomeHolderCache.get(WitcherBiomes.ARID_SCRUBLAND),
+            BiomeHolderCache.get(WitcherBiomes.TOUSSAINT_VINEYARDS),
+            
+            // Skellige
+            BiomeHolderCache.get(WitcherBiomes.SKELLIGE_COAST),
+            BiomeHolderCache.get(WitcherBiomes.ROCKY_COASTLINES),
+            BiomeHolderCache.get(WitcherBiomes.TUNDRA_PLAINS),
+            BiomeHolderCache.get(WitcherBiomes.GLACIER_FIELDS),
+            BiomeHolderCache.get(WitcherBiomes.STORM_SEAS),
+            
+            // No Man's Land / War Zones
+            BiomeHolderCache.get(WitcherBiomes.NO_MANS_LAND),
+            BiomeHolderCache.get(WitcherBiomes.VELEN_MARSHES),
+            
+            // Special Cross-Regional
+            BiomeHolderCache.get(WitcherBiomes.BATTLEFIELD),
+            BiomeHolderCache.get(WitcherBiomes.CURSED_SWAMP),
+            BiomeHolderCache.get(WitcherBiomes.ANCIENT_RUINS)
         ).filter(holder -> holder != null);
     }
     
@@ -93,32 +124,62 @@ public class ContinentBiomeSource extends BiomeSource {
         
         Holder<Biome> selectedBiome = null;
         
+        // Check for special cross-regional biomes first (rare)
+        double specialChance = regionProvider.getSpecialBiomeNoise((int)(temperature * 1000), (int)(humidity * 1000));
+        if (specialChance > 0.95 && region == ContinentRegion.NO_MANS_LAND) {
+            // 5% chance for battlefield in No Man's Land
+            selectedBiome = BiomeHolderCache.get(WitcherBiomes.BATTLEFIELD);
+            if (selectedBiome != null) return selectedBiome;
+        }
+        if (specialChance > 0.92 && humidity > 0.85) {
+            // Cursed swamps in very humid areas
+            selectedBiome = BiomeHolderCache.get(WitcherBiomes.CURSED_SWAMP);
+            if (selectedBiome != null) return selectedBiome;
+        }
+        if (specialChance > 0.90 && y > 72 && humidity < 0.5) {
+            // Ancient ruins on high dry ground
+            selectedBiome = BiomeHolderCache.get(WitcherBiomes.ANCIENT_RUINS);
+            if (selectedBiome != null) return selectedBiome;
+        }
+        
         switch (region) {
             case TEMERIA:
-                // Temperate farmland region with rivers
-                if (humidity > 0.7) {
+                // Temperate farmland region with rivers and forests
+                if (humidity > 0.80 && y < 68) {
+                    // Dense magical forest near borders (rare)
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.BROKILON_FOREST);
+                } else if (humidity > 0.70) {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.PONTAR_RIVERLANDS);
-                } else if (humidity > 0.4) {
-                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.TEMERIAN_FARMLANDS);
-                } else {
+                } else if (y > 75) {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.MAHAKAMAN_FOOTHILLS);
+                } else {
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.TEMERIAN_FARMLANDS);
                 }
                 break;
                 
             case KAEDWEN:
                 // Mountainous northern kingdom
-                if (y > 80 || temperature < 0.3) {
+                if (y > 90) {
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.MAHAKAMAN_MOUNTAINS);
+                } else if (y > 80) {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.MOUNTAIN_PEAKS);
-                } else if (temperature < 0.5) {
+                } else if (humidity > 0.7) {
+                    // Glacial lakes in wet valleys
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.GLACIAL_LAKES);
+                } else if (temperature < 0.35) {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.FROZEN_TAIGA);
                 } else {
-                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.MAHAKAMAN_FOOTHILLS);
+                    // Mining valleys (default)
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.MINE_VALLEYS);
                 }
                 break;
                 
             case REDANIA:
-                // Rich kingdom with varied terrain
-                if (isCoastal) {
+                // Rich northern kingdom with religious architecture
+                if (humidity > 0.75) {
+                    // Oxenfurt lakes region
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.OXENFURT_LAKES);
+                } else if (isCoastal) {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.PONTAR_RIVERLANDS);
                 } else {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.REDANIAN_PLAINS);
@@ -126,30 +187,67 @@ public class ContinentBiomeSource extends BiomeSource {
                 break;
                 
             case NILFGAARD:
-                // Southern empire - arid/scrubland
-                selectedBiome = BiomeHolderCache.get(WitcherBiomes.NILFGAARDIAN_SCRUBLAND);
+                // Southern empire - varied terrain
+                if (temperature > 0.85 && humidity > 0.5 && humidity < 0.65) {
+                    // Toussaint wine country
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.TOUSSAINT_VINEYARDS);
+                } else if (temperature > 0.8 && humidity > 0.55) {
+                    // Imperial gardens near cities
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.IMPERIAL_GARDENS);
+                } else if (temperature > 0.75 && humidity > 0.4) {
+                    // Olive groves
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.OLIVE_GROVES);
+                } else if (humidity < 0.25) {
+                    // Arid scrubland
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.ARID_SCRUBLAND);
+                } else if (humidity < 0.45) {
+                    // Nilfgaardian scrubland
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.NILFGAARDIAN_SCRUBLAND);
+                } else {
+                    // Southern plains
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.SOUTHERN_PLAINS);
+                }
                 break;
                 
             case SKELLIGE:
-                // Island archipelago - coastal/mountainous
-                if (isCoastal) {
-                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.SKELLIGE_COAST);
-                } else if (y > 70) {
+                // Island archipelago - Norse-inspired
+                if (y < 58) {
+                    // Deep ocean areas
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.STORM_SEAS);
+                } else if (isCoastal) {
+                    if (y > 68) {
+                        selectedBiome = BiomeHolderCache.get(WitcherBiomes.ROCKY_COASTLINES);
+                    } else {
+                        selectedBiome = BiomeHolderCache.get(WitcherBiomes.SKELLIGE_COAST);
+                    }
+                } else if (y > 85) {
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.GLACIER_FIELDS);
+                } else if (y > 75) {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.MOUNTAIN_PEAKS);
                 } else {
-                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.FROZEN_TAIGA);
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.TUNDRA_PLAINS);
                 }
                 break;
                 
             case NO_MANS_LAND:
                 // War-torn wasteland
-                selectedBiome = BiomeHolderCache.get(WitcherBiomes.NO_MANS_LAND);
+                if (humidity > 0.80 && y < 66) {
+                    // Velen swamps - dangerous marshlands
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.VELEN_MARSHES);
+                } else if (humidity < 0.3 && temperature > 0.4) {
+                    // Scorched battlefields
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.BATTLEFIELD);
+                } else {
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.NO_MANS_LAND);
+                }
                 break;
                 
             case AEDIRN:
-                // Eastern kingdom - similar to Temeria
-                if (humidity > 0.6) {
+                // Eastern kingdom - agricultural with dragon lore
+                if (humidity > 0.65) {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.PONTAR_RIVERLANDS);
+                } else if (y > 75) {
+                    selectedBiome = BiomeHolderCache.get(WitcherBiomes.MAHAKAMAN_FOOTHILLS);
                 } else {
                     selectedBiome = BiomeHolderCache.get(WitcherBiomes.TEMERIAN_FARMLANDS);
                 }

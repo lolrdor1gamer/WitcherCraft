@@ -39,6 +39,12 @@ public class BiomeHolderCache {
         cacheHolder(biomeGetter, WitcherBiomes.NILFGAARDIAN_SCRUBLAND);
         cacheHolder(biomeGetter, WitcherBiomes.SKELLIGE_COAST);
         
+        // New biomes - Phase 3
+        cacheHolder(biomeGetter, WitcherBiomes.BROKILON_FOREST);
+        cacheHolder(biomeGetter, WitcherBiomes.VELEN_MARSHES);
+        cacheHolder(biomeGetter, WitcherBiomes.TOUSSAINT_VINEYARDS);
+        cacheHolder(biomeGetter, WitcherBiomes.MAHAKAMAN_MOUNTAINS);
+        
         initialized = true;
     }
     

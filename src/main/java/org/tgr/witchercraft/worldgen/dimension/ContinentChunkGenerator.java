@@ -3,7 +3,10 @@ package org.tgr.witchercraft.worldgen.dimension;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.Holder;
+import net.minecraft.core.QuartPos;
 import net.minecraft.server.level.WorldGenRegion;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.StructureManager;
@@ -15,7 +18,13 @@ import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.*;
 import net.minecraft.world.level.levelgen.blending.Blender;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import org.tgr.witchercraft.worldgen.biome.ContinentBiomeSource;
+import org.tgr.witchercraft.worldgen.feature.LandmarkPlacer;
+import org.tgr.witchercraft.worldgen.feature.OrePlacer;
+import org.tgr.witchercraft.worldgen.feature.VegetationPlacer;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -34,10 +43,29 @@ public class ContinentChunkGenerator extends ChunkGenerator {
     );
     
     private final Holder<NoiseGeneratorSettings> settings;
+    private OrePlacer orePlacer;
+    private VegetationPlacer vegetationPlacer;
+    private LandmarkPlacer landmarkPlacer;
     
     public ContinentChunkGenerator(BiomeSource biomeSource, Holder<NoiseGeneratorSettings> settings) {
         super(biomeSource);
         this.settings = settings;
+    }
+    
+    /**
+     * Initialize the feature placers with the world seed.
+     * Must be called before terrain generation.
+     */
+    private void ensurePlacersInitialized(long seed) {
+        if (this.orePlacer == null) {
+            this.orePlacer = new OrePlacer(seed);
+        }
+        if (this.vegetationPlacer == null) {
+            this.vegetationPlacer = new VegetationPlacer(seed);
+        }
+        if (this.landmarkPlacer == null) {
+            this.landmarkPlacer = new LandmarkPlacer(seed);
+        }
     }
     
     @Override
@@ -49,13 +77,24 @@ public class ContinentChunkGenerator extends ChunkGenerator {
     public void applyCarvers(WorldGenRegion region, long seed, RandomState randomState,
                             BiomeManager biomeManager, StructureManager structureManager,
                             ChunkAccess chunk) {
-        // Use default carving for now (caves, ravines)
-        // TODO: Add custom Witcher-specific cave systems
+        // TODO: Add cave carving later
+        // BiomeManager biomeManager2 = biomeManager.withDifferentSource(this.biomeSource);
+        // WorldgenRandom worldgenRandom = new WorldgenRandom(new LegacyRandomSource(RandomSource.create().nextLong()));
+        
+        // ChunkPos chunkPos = chunk.getPos();
+        
+        // Apply air carvers (caves)
+        // this.applyCarvingStep(GenerationStep.Carving.AIR, region, seed, randomState, 
+        //                      biomeManager2, structureManager, chunk, worldgenRandom, chunkPos);
     }
+
     
     @Override
     public void buildSurface(WorldGenRegion region, StructureManager structureManager, 
                             RandomState randomState, ChunkAccess chunk) {
+        // Ensure placers are initialized with world seed
+        ensurePlacersInitialized(region.getSeed());
+        
         // Generate surface blocks based on biome
         // Place grass/dirt on top of stone, sand on beaches, etc.
         int minY = this.getMinY();
@@ -104,6 +143,21 @@ public class ContinentChunkGenerator extends ChunkGenerator {
                 }
             }
         }
+        
+        // Place ores in stone (using instance with region-based distribution)
+        orePlacer.placeOres(region, chunk, region.getRandom());
+        
+        // Place vegetation on grass blocks (using instance with region-based herbs)
+        var biome = region.getBiome(chunk.getPos().getWorldPosition());
+        vegetationPlacer.placeVegetation(region, chunk, region.getRandom(), biome.value());
+        
+        // Place landmarks (Places of Power, Ancient Trees, Monster Nests)
+        landmarkPlacer.placeLandmarks(region, chunk, region.getRandom());
+        
+        // Place natural terrain features (boulders, logs, mushrooms)
+        org.tgr.witchercraft.worldgen.feature.TerrainFeatures.placeFeatures(
+            chunk, region.getRandom(), biome.value()
+        );
     }
     
     @Override

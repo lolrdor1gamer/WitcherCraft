@@ -4,7 +4,9 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.Minecraft;
+import org.tgr.witchercraft.client.screen.BestiaryScreen;
 import org.tgr.witchercraft.client.screen.CharacterStatsScreen;
+import org.tgr.witchercraft.client.screen.MeditationScreen;
 import org.tgr.witchercraft.client.screen.SkillTreeScreen;
 import org.tgr.witchercraft.client.screen.QuestJournalScreen;
 
@@ -34,6 +36,16 @@ public class UIScreenHandler {
             while (UIKeyBindings.QuestJournalKey.consumeClick()) {
                 openQuestJournalScreen(client);
             }
+            
+            // Bestiary Screen
+            while (UIKeyBindings.BestiaryKey.consumeClick()) {
+                openBestiaryScreen(client);
+            }
+            
+            // Meditation Screen
+            while (UIKeyBindings.MeditationKey.consumeClick()) {
+                openMeditationScreen(client);
+            }
         });
     }
 
@@ -50,5 +62,15 @@ public class UIScreenHandler {
     private static void openQuestJournalScreen(Minecraft client) {
         if (client.player == null) return;
         client.setScreen(new QuestJournalScreen());
+    }
+    
+    private static void openBestiaryScreen(Minecraft client) {
+        if (client.player == null) return;
+        client.setScreen(new BestiaryScreen());
+    }
+    
+    private static void openMeditationScreen(Minecraft client) {
+        if (client.player == null) return;
+        client.setScreen(new MeditationScreen());
     }
 }

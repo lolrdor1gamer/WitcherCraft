@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.tgr.witchercraft.alchemy.WitcherPotionRecipes;
+import org.tgr.witchercraft.bestiary.BestiaryEntries;
 import org.tgr.witchercraft.command.BiomeInfoCommand;
 import org.tgr.witchercraft.command.ContinentCommand;
 import org.tgr.witchercraft.command.ReputationCommand;
@@ -39,7 +40,18 @@ public class Witchercraft implements ModInitializer {
         org.tgr.witchercraft.network.RequestPlayerDataPacket.register();
         org.tgr.witchercraft.network.SyncPlayerDataPacket.register();
         org.tgr.witchercraft.network.SyncWitcherStatsPayload.register();
+        org.tgr.witchercraft.network.MeditationRequestPacket.register();
+        org.tgr.witchercraft.network.DodgeRequestPacket.register();
         WitcherPotionRecipes.register();
+        
+        // Initialize combat system
+        org.tgr.witchercraft.combat.CombatEventHandler.register();
+        
+        // Initialize gear set bonuses
+        org.tgr.witchercraft.gear.SetBonusHandler.register();
+        
+        // Initialize bestiary entries
+        BestiaryEntries.initialize();
 
         // Register commands
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {

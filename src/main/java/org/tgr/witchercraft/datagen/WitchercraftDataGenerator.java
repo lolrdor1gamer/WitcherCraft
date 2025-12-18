@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
+import org.tgr.witchercraft.worldgen.WitcherWorldPresets;
 import org.tgr.witchercraft.worldgen.biome.WitcherBiomes;
 import org.tgr.witchercraft.worldgen.dimension.WitcherDimensions;
 
@@ -30,5 +31,8 @@ public class WitchercraftDataGenerator implements DataGeneratorEntrypoint {
         
         // Register level stems (dimension configurations)
         registryBuilder.add(Registries.LEVEL_STEM, WitcherDimensions::bootstrapStem);
+        
+        // Register world presets (default world type)
+        registryBuilder.add(Registries.WORLD_PRESET, WitcherWorldPresets::bootstrap);
     }
 }

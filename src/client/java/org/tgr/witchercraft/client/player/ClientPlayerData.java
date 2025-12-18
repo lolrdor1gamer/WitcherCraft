@@ -2,6 +2,7 @@ package org.tgr.witchercraft.client.player;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import org.tgr.witchercraft.bestiary.BestiaryData;
 import org.tgr.witchercraft.network.SyncPlayerDataPacket;
 import org.tgr.witchercraft.player.PlayerAttributes;
 import org.tgr.witchercraft.player.PlayerLevel;
@@ -19,6 +20,7 @@ public class ClientPlayerData {
     private static final PlayerLevel level = new PlayerLevel();
     private static final PlayerAttributes attributes = new PlayerAttributes();
     private static final PlayerSkills skills = new PlayerSkills();
+    private static BestiaryData bestiaryData = new BestiaryData();
     
     public static void update(SyncPlayerDataPacket packet) {
         // Update level data
@@ -50,5 +52,13 @@ public class ClientPlayerData {
     
     public static PlayerSkills getSkills() {
         return skills;
+    }
+    
+    public static BestiaryData getBestiaryData() {
+        return bestiaryData;
+    }
+    
+    public static void updateBestiaryData(BestiaryData data) {
+        bestiaryData = data;
     }
 }
